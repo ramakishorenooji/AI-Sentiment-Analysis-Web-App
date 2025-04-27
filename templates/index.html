@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Sentiment Analysis</title>
+    <style>
+      body { font-family: sans-serif; max-width: 600px; margin: 2rem auto; }
+      textarea { width: 100%; }
+      .result { margin-top: 1.5rem; padding: 1rem; border: 1px solid #ccc; }
+    </style>
+  </head>
+  <body>
+    <h1>📝 Sentiment Analysis</h1>
+    <form method="post">
+      <textarea name="text" rows="6" placeholder="Enter text here…"></textarea><br><br>
+      <button type="submit">Analyze</button>
+    </form>
+
+    {% if result %}
+      <div class="result">
+        <strong>Label:</strong> {{ result.label }}<br>
+        <strong>Confidence:</strong> {{ result.score }}
+      </div>
+    {% endif %}
+  </body>
+</html>
